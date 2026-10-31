@@ -1,0 +1,36 @@
+{
+  "name": "safecart-kids-investor-agent",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "$0 autonomous investor-finding agent for SafeCart Kids: web + public LinkedIn discovery, AI research, scoring, outreach and follow-ups.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite --port=3000 --host=0.0.0.0",
+    "dev:server": "tsx watch server/index.ts",
+    "build": "vite build && esbuild server/index.ts --bundle --platform=node --format=esm --target=node20 --outfile=dist-server/index.mjs",
+    "start": "node dist-server/index.mjs",
+    "clean": "rm -rf dist dist-server",
+    "lint": "tsc --noEmit",
+    "local": "npm run build && npm start"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.1",
+    "esbuild": "^0.28.0",
+    "lucide-react": "^0.546.0",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.8.3"
+  }
+}
